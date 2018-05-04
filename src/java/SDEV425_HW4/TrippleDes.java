@@ -6,6 +6,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest;
 
 public class TrippleDes {
 
@@ -55,6 +56,13 @@ public class TrippleDes {
             e.printStackTrace();
         }
         return decryptedText;
+    }
+    
+    public string hash(String encryptedString) {
+       MessageDigest digest = MessageDigest.getInstance("SHA-256");
+       byte[] encodedhash = digest.digest(encryptedString.getBytes(StandardCharsets.UTF_8));
+       encodedHashString = new String(encodedhash);
+       return encodedHashString;
     }
 
     private String dbUname = encrypt( "sdev425" );
