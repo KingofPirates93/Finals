@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sdevhw4" default="compile.module.sdevhw4">
+  <dirname property="module.sdevhw4.basedir" file="${ant.file.module_sdevhw4}"/>
+  
+  <property name="module.jdk.home.sdevhw4" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sdevhw4" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sdevhw4" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sdevhw4" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="sdevhw4.output.dir" value="${module.sdevhw4.basedir}/out/production/SDEVHW4"/>
+  <property name="sdevhw4.testoutput.dir" value="${module.sdevhw4.basedir}/out/test/SDEVHW4"/>
+  
+  <path id="sdevhw4.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sdevhw4.module.production.classpath">
+    <path refid="${module.jdk.classpath.sdevhw4}"/>
+    <path refid="library.tomcat_9.0.6.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="sdevhw4.runtime.production.module.classpath">
+    <pathelement location="${sdevhw4.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="sdevhw4.module.classpath">
+    <path refid="${module.jdk.classpath.sdevhw4}"/>
+    <pathelement location="${sdevhw4.output.dir}"/>
+    <path refid="library.tomcat_9.0.6.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="sdevhw4.runtime.module.classpath">
+    <pathelement location="${sdevhw4.testoutput.dir}"/>
+    <pathelement location="${sdevhw4.output.dir}"/>
+    <path refid="library.tomcat_9.0.6.classpath"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sdevhw4">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sdevhw4">
+    <patternset refid="excluded.from.module.sdevhw4"/>
+  </patternset>
+  
+  <path id="sdevhw4.module.sourcepath">
+    <dirset dir="${module.sdevhw4.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sdevhw4" depends="compile.module.sdevhw4.production,compile.module.sdevhw4.tests" description="Compile module SDEVHW4"/>
+  
+  <target name="compile.module.sdevhw4.production" depends="register.custom.compilers" description="Compile module SDEVHW4; production classes">
+    <mkdir dir="${sdevhw4.output.dir}"/>
+    <javac2 destdir="${sdevhw4.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sdevhw4}/javac">
+      <compilerarg line="${compiler.args.sdevhw4}"/>
+      <bootclasspath refid="sdevhw4.module.bootclasspath"/>
+      <classpath refid="sdevhw4.module.production.classpath"/>
+      <src refid="sdevhw4.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sdevhw4"/>
+    </javac2>
+    
+    <copy todir="${sdevhw4.output.dir}">
+      <fileset dir="${module.sdevhw4.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sdevhw4.tests" depends="register.custom.compilers,compile.module.sdevhw4.production" description="compile module SDEVHW4; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sdevhw4" description="cleanup module">
+    <delete dir="${sdevhw4.output.dir}"/>
+    <delete dir="${sdevhw4.testoutput.dir}"/>
+  </target>
+</project>

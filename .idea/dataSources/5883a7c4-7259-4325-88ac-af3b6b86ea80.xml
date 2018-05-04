@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="SDEV425@localhost">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="APP"/>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SDEV425">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="1" name="SQLJ"/>
+    <schema id="6" parent="1" name="SYS"/>
+    <schema id="7" parent="1" name="SYSCAT"/>
+    <schema id="8" parent="1" name="SYSCS_DIAG"/>
+    <schema id="9" parent="1" name="SYSCS_UTIL"/>
+    <schema id="10" parent="1" name="SYSFUN"/>
+    <schema id="11" parent="1" name="SYSIBM"/>
+    <schema id="12" parent="1" name="SYSPROC"/>
+    <schema id="13" parent="1" name="SYSSTAT"/>
+    <table id="14" parent="4" name="CUSTOMERACCOUNT"/>
+    <table id="15" parent="4" name="ROLES"/>
+    <table id="16" parent="4" name="SDEV_USERS"/>
+    <table id="17" parent="4" name="USER_INFO"/>
+    <table id="18" parent="4" name="USER_ROLES"/>
+    <column id="19" parent="14" name="ACCOUNT_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="14" name="USER_ID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="14" name="CARDHOLDERNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(75)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="14" name="CARDTYPE">
+      <Position>4</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="14" name="SERVICECODE">
+      <Position>5</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="14" name="CARDNUMBER">
+      <Position>6</Position>
+      <DataType>VARCHAR(30)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="14" name="CAV_CCV2">
+      <Position>7</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="14" name="EXPIREDATE">
+      <Position>8</Position>
+      <DataType>DATE|91s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="14" name="FULLTRACKDATA">
+      <Position>9</Position>
+      <DataType>VARCHAR(75)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="14" name="PIN">
+      <Position>10</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="29" parent="14" name="SQL180503180400090">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ACCOUNT_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="14" name="SQL180503180400091">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>SDEV425</RefSchemaName>
+      <RefTableName>SDEV_USERS</RefTableName>
+      <RefKeyName>SQL180503180359750</RefKeyName>
+      <RefColNames>USER_ID</RefColNames>
+    </foreign-key>
+    <column id="31" parent="15" name="ROLE_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="15" name="ROLE">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="15" name="SQL180503180359871">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ROLE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="15" name="SQL180503180359870">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ROLE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="16" name="USER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="16" name="EMAIL">
+      <Position>2</Position>
+      <DataType>VARCHAR(75)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="16" name="FIRSTNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="16" name="LASTNAME">
+      <Position>4</Position>
+      <DataType>VARCHAR(75)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="16" name="CITY">
+      <Position>5</Position>
+      <DataType>VARCHAR(75)|12s</DataType>
+    </column>
+    <column id="40" parent="16" name="STATE">
+      <Position>6</Position>
+      <DataType>CHAR(2)|1s</DataType>
+    </column>
+    <column id="41" parent="16" name="ZIP">
+      <Position>7</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+    </column>
+    <index id="42" parent="16" name="SQL180503180359751">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMAIL</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="16" name="SQL180503180359750">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="17" name="USER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="17" name="PASSWORD">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="46" parent="17" name="SQL180503180359930">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USER_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="47" parent="17" name="FK_WU2">
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>SDEV425</RefSchemaName>
+      <RefTableName>SDEV_USERS</RefTableName>
+      <RefKeyName>SQL180503180359750</RefKeyName>
+      <RefColNames>USER_ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="48" parent="18" name="USER_ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="18" name="ROLE_ID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="18" name="PKUR">
+      <ColNames>USER_ID
+ROLE_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="18" name="FK_UR1">
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>SDEV425</RefSchemaName>
+      <RefTableName>SDEV_USERS</RefTableName>
+      <RefKeyName>SQL180503180359750</RefKeyName>
+      <RefColNames>USER_ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="52" parent="18" name="FK_UR2">
+      <ColNames>ROLE_ID</ColNames>
+      <RefSchemaName>SDEV425</RefSchemaName>
+      <RefTableName>ROLES</RefTableName>
+      <RefKeyName>SQL180503180359870</RefKeyName>
+      <RefColNames>ROLE_ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
