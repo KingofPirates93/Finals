@@ -42,7 +42,7 @@
     <splitter split-orientation="vertical" split-proportion="0.8668407">
       <split-first>
         <leaf>
-          <file leaf-file-name="Authenticate.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Authenticate.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/java/SDEV425_HW4/Authenticate.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="276">
@@ -109,7 +109,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TrippleDes.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TrippleDes.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/java/SDEV425_HW4/TrippleDes.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="680">
@@ -171,6 +171,9 @@
       <find>isValid</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -207,6 +210,7 @@
     <option name="width" value="1453" />
     <option name="height" value="790" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -503,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18136000" />
+    <option name="totallyTimeSpent" value="19329000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,6 +520,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50159913" side_tool="true" weight="0.42156863" />
@@ -525,7 +530,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info anchor="bottom" id="Inspection Results" order="8" sideWeight="0.49946696" weight="0.32897604" />
-      <window_info active="true" anchor="right" id="Database" visible="true" weight="0.1058941" />
+      <window_info anchor="right" id="Database" visible="true" weight="0.1058941" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -537,10 +542,10 @@
       <window_info anchor="bottom" id="Java Enterprise" sideWeight="0.49946696" weight="0.32897604" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64072496" weight="0.35511982" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.49946696" weight="0.32897604" />
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.30392158" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14085914" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14085914" />
       <window_info id="Web" side_tool="true" />
       <window_info anchor="bottom" id="SonarLint" sideWeight="0.49840087" visible="true" weight="0.5585859" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32897604" />
@@ -704,20 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/SDEV425_HW4/TrippleDes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-            <element signature="e#2062#2063#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-            <element signature="e#2187#2188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
@@ -732,6 +723,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2119#2238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/SDEV425_HW4/TrippleDes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+            <element signature="e#2062#2063#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2187#2188#0" expanded="true" />
           </folding>
         </state>
       </provider>
