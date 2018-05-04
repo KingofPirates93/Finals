@@ -75,22 +75,6 @@ public class Account {
        encodedHashString = new String(encodedhash);
        return encodedHashString;
     }
-
-    private String dbUname = encrypt( "sdev425" );
-    private String dbpname = encrypt( "sdev425");
-
-    public String getDbUname() {
-        return dbUname;
-    }
-
-    public String getDbpname() {
-        return dbpname;
-    }
-
-
-
-
-
 }
 
 
