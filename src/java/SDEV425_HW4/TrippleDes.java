@@ -1,12 +1,15 @@
 package java.SDEV425_HW4;
 
-import java.security.spec.KeySpec;
-import javax.crypto.*;
+import org.apache.commons.codec.binary.Base64;
+
+import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.digest;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.KeySpec;
 
 public class TrippleDes {
 
@@ -19,6 +22,7 @@ public class TrippleDes {
     private String myEncryptionKey;
     private String myEncryptionScheme;
     SecretKey key;
+    private String encodedHashString;
 
     public TrippleDes() throws Exception {
         myEncryptionKey = "ThisIsSpartaThisIsSparta";
@@ -58,7 +62,7 @@ public class TrippleDes {
         return decryptedText;
     }
     
-    public string hash(String encryptedString) {
+    public String hash(String encryptedString) throws NoSuchAlgorithmException {
        MessageDigest digest = MessageDigest.getInstance("SHA-256");
        byte[] encodedhash = digest.digest(encryptedString.getBytes(StandardCharsets.UTF_8));
        encodedHashString = new String(encodedhash);

@@ -1,7 +1,0 @@
-
-@
-logon.properties,3\2\329d0f74a36962e7928e99b88e6a4b22c05cff89
-9
-	logon.xml,8\f\8f36b027777657422ce700a3ec063f813faeb483
-9
-	LogOn.iml,3\8\384af1094ccad44289cf9a039bc8879ac3e433bf
