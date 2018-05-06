@@ -26,13 +26,13 @@
             <% } else {%>
             <%-- Gather the data from the servlet--%>
             <% String UserEmail = (String) session.getAttribute("UMUCUserEmail");%>  
-            <% String user_id = (String) session.getAttribute("UMUCUserID").toString();%>  
+            <% String user_id = session.getAttribute("UMUCUserID").toString();%>
             <% String Cardholdername = (String) request.getAttribute("Cardholdername");%>  
             <% String CardType = (String) request.getAttribute("CardType");%>  
             <% String ServiceCode = (String) request.getAttribute("ServiceCode");%>  
             <% String CardNumber = (String) request.getAttribute("CardNumber");%>  
-            <% String CAV_CCV2 = (String) request.getAttribute("CAV_CCV2").toString();%> 
-            <% String expiredate = (String) request.getAttribute("expiredate").toString();%> 
+            <% String CAV_CCV2 = request.getAttribute("CAV_CCV2").toString();%>
+            <% String expiredate = request.getAttribute("expiredate").toString();%>
             <% String FullTrackData = (String) request.getAttribute("FullTrackData");%> 
             <% String PIN = (String) request.getAttribute("PIN");%> 
           

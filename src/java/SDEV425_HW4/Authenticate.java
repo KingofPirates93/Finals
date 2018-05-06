@@ -16,13 +16,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 
-/**
- * @author jim
- */
 public class Authenticate extends HttpServlet {
 
     // variables
@@ -38,11 +36,10 @@ public class Authenticate extends HttpServlet {
      *
      * @param request  servlet request
      * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
      * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         response.setContentType( "text/html;charset=UTF-8" );
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -145,29 +142,28 @@ public class Authenticate extends HttpServlet {
             ds.setDataSourceName( "jdbc:derby" );
 
             Connection conn = ds.getConnection();
+            Statement statement = null;
+            PreparedStatement preparedStatement = null, preparedStatement2 = null;
+            ResultSet resultSet = null;
 
-            Statement stmt = conn.createStatement();
-            String sql = "select user_id from sdev_users  where email = '" + this.username + "'";
-            ResultSet rs = stmt.executeQuery( sql );
-            while (rs.next()) {
-                user_id = rs.getInt( 1 );
-            }
-            if (user_id > 0) {
-                String sql2 = "select user_id from user_info where user_id = " + user_id + "and password = '" + this.pword + "'";
-                ResultSet rs2 = stmt.executeQuery( sql2 );
-                while (rs2.next()) {
-                    hitcnt++;
-                }
-                // Set to true if userid/password match
-                if (hitcnt > 0) {
-                    status = true;
-                }
+            try {
+                String query = "select user_id from sdev_users  where email = ?";
+                preparedStatement = conn.prepareStatement( query );
+                preparedStatement.setString( 1, name );
+                preparedStatement.executeQuery();
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
+            String query2 = "select user_id from user_info where user_id = ? and password = ?";
+            preparedStatement2 = conn.prepareStatement(query2);
+            preparedStatement2.setString(1, String.valueOf( user_id ) );
+            preparedStatement2.setString(2, this.pword);
+            preparedStatement2.executeQuery();
         } catch (Exception e) {
-            System.out.println( e );
+            e.printStackTrace();
         }
         return status;
     }
-
 }
